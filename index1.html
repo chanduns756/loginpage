@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login & Register Form</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .container {
+        width: 350px;
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #667eea;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .btn:hover {
+        background: #5a67d8;
+    }
+
+    .toggle-text {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .toggle-text span {
+        color: #667eea;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .show-password {
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 5px;
+        display: inline-block;
+        color: #667eea;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Login Form -->
+    <div id="loginForm">
+        <h2>Login</h2>
+
+        <div class="input-group">
+            <input type="email" placeholder="Email" required>
+        </div>
+
+        <div class="input-group">
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <span class="show-password" onclick="togglePassword('loginPassword')">Show Password</span>
+        </div>
+
+        <button class="btn">Login</button>
+
+        <div class="toggle-text">
+            Don't have an account?
+            <span onclick="toggleForms()">Register</span>
+        </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerForm" class="hidden">
+        <h2>Register</h2>
+
+        <div class="input-group">
+            <input type="text" placeholder="Full Name" required>
+        </div>
+
+        <div class="input-group">
+            <input type="email" placeholder="Email" required>
+        </div>
+
+        <div class="input-group">
+            <input type="password" id="registerPassword" placeholder="Password" required>
+            <span class="show-password" onclick="togglePassword('registerPassword')">Show Password</span>
+        </div>
+
+        <div class="input-group">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <span class="show-password" onclick="togglePassword('confirmPassword')">Show Password</span>
+        </div>
+
+        <button class="btn" onclick="validateRegister()">Register</button>
+
+        <div class="toggle-text">
+            Already have an account?
+            <span onclick="toggleForms()">Login</span>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleForms() {
+    document.getElementById("loginForm").classList.toggle("hidden");
+    document.getElementById("registerForm").classList.toggle("hidden");
+}
+
+function togglePassword(id) {
+    let input = document.getElementById(id);
+    input.type = input.type === "password" ? "text" : "password";
+}
+
+function validateRegister() {
+    let password = document.getElementById("registerPassword").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+    } else {
+        alert("Registration Successful!");
+    }
+}
+</script>
+
+</body>
+</html>
