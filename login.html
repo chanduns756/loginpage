@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Chat App</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Chat App</h1>
+
+        <!-- Auth Container -->
+        <div id="auth-container">
+            <div id="login-section">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+            </div>
+
+            <div id="register-section" class="hidden">
+                <h2>Register</h2>
+                <form id="register-form">
+                    <input type="text" id="reg-name" placeholder="Name" required>
+                    <input type="email" id="reg-email" placeholder="Email" required>
+                    <input type="password" id="reg-password" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+            </div>
+            <p id="auth-error" class="error"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check if already logged in
+        if (localStorage.getItem('chat_token')) {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>

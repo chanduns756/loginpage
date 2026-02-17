@@ -1,0 +1,204 @@
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    margin: 0;
+    color: #fff;
+}
+
+.user-info-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.user-name {
+    font-weight: 600;
+    color: #000;
+    font-size: 16px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.container {
+    margin-top: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    width: 90%;
+
+}
+
+h1,
+h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    box-sizing: border-box;
+    outline: none;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.error {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Chat Styles */
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#logout-btn {
+    width: auto;
+    padding: 5px 15px;
+    background-color: rgba(220, 53, 69, 0.6);
+}
+
+#logout-btn:hover {
+    background-color: rgba(220, 53, 69, 0.8);
+}
+
+#messages-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.message .sender {
+    font-weight: bold;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 4px;
+}
+
+.message .content {
+    font-size: 14px;
+    color: #fff;
+}
+
+.message .time {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: right;
+    margin-top: 4px;
+}
+
+#message-form {
+    display: flex;
+    gap: 10px;
+}
+
+#message-form input {
+    margin-bottom: 0;
+}
+
+#message-form button {
+    width: auto;
+}
